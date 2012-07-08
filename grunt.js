@@ -1,30 +1,36 @@
 module.exports = function(grunt) {
-
   // Project configuration.
   grunt.initConfig({
     pkg: '<json:package.json>',
-    test: {
-      files: ['test/**/*.js']
-    },
     lint: {
-      files: ['grunt.js', 'src/**/*.js', 'test/**/*.js']
+      files: ['grunt.js', 'main.js' ]
     },
     watch: {
       files: '<config:lint.files>',
-      tasks: 'default'
+      tasks: 'lint'
     },
     jshint: {
       options: {
+        // enforcing options
+        bitwise: false,
         curly: true,
         eqeqeq: true,
+        forin: true,
         immed: true,
         latedef: true,
         newcap: true,
         noarg: true,
-        sub: true,
+        noempty: true,
+        nonew: true,
         undef: true,
+        trailing: true,
+
+        // relaxing options
         boss: true,
         eqnull: true,
+        devel: true,
+
+        // environments
         node: true
       },
       globals: {
@@ -34,6 +40,5 @@ module.exports = function(grunt) {
   });
 
   // Default task.
-  grunt.registerTask('default', 'lint test');
-
+  grunt.registerTask('default', 'lint');
 };
