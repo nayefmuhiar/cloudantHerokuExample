@@ -35,6 +35,12 @@ Procfile:
 will see the stored tweets (may take a few minutes to show up depending on the
 Twitter Search API and latency) and can write views against them.
 
+## Contributing
+
+This project uses grunt (https://github.com/cowboy/grunt) for development. It
+will make sure that any modifications you make are lint free and pass any
+tests.
+
 ## License
 Copyright (c) 2012 Sam Bisbee
 Licensed under the APACHE-2.0 license.
