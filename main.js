@@ -92,6 +92,9 @@ run = function(qry, checkLatestPersisted) {
 
           searchAndPersist(qry + '&since_id=' + res.body.rows[0].id);
         }
+        else {
+          searchAndPersist(qry);
+        }
       }
     });
   }
