@@ -62,7 +62,8 @@ var searchAndPersist = function(qry) {
       }
 
       if(body.next_page) {
-        run(body.next_page, true);
+        console.log('running next_page');
+        run(body.next_page, false);
       }
       else {
         suspend();
@@ -71,10 +72,12 @@ var searchAndPersist = function(qry) {
   });
 };
 
-run = function(qry, dontCheckLatestPersisted) {
+run = function(qry, checkLatestPersisted) {
   qry = (qry || searchRoot) + '&result_type=recent&show_user=false';
 
-  if(dontCheckLatestPersisted) {
+  if(checkLatestPersisted) {
+    console.log('Checking for latest persisted...');
+
     sag.getAllDocs({
       limit: 1,
       descending: true,
@@ -114,10 +117,12 @@ if(typeof process.env.CLOUDANT_URL !== 'string') {
 
 sag = sag.serverFromURL(process.env.CLOUDANT_URL);
 
+console.log('Checking for database...');
+
 sag.setDatabase('heroku-example', true, function(exists) {
   if(!exists) {
     throw new Error('Was not able to find or create the herokuExample database.');
   }
 
-  run();
+  run(null, true);
 });
