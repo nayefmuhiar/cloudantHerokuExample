@@ -1,7 +1,7 @@
-# herokuExample
+# Cloudant/Heroku Example
 
 An example of using Heroku and Cloudant. It collects tweets for the "couchdb"
-search term using Twitter"s API, storing them in the "herokuExample" database.
+search term using Twitter"s API, storing them in the "heroku-example" database.
 
 ## Getting Started
 
@@ -9,7 +9,7 @@ These are the install instructions.
 
 1. Clone this repo onto your computer:
 
-`git clone https://github.com/sbisbee/herokuExample.git`
+`git clone https://github.com/cloudant/cloudantHerokuExample.git`
 
 2. Make sure you have set up Heroku properly. See
 https://devcenter.heroku.com/articles/quickstart
@@ -42,5 +42,5 @@ will make sure that any modifications you make are lint free and pass any
 tests.
 
 ## License
-Copyright (c) 2012 Sam Bisbee
+Copyright (c) 2012 Cloudant
 Licensed under the APACHE-2.0 license.
